@@ -8,7 +8,7 @@ provider "proxmox" {
 }
 
 resource "proxmox_vm_qemu" "virtual_machine" {
-  name  = "win2022terraform"
+  name  = "win2022stdterraform"
 #  count = var.vm_count
 #  name  = "${var.vm_name_prefix}${count.index}.${var.domain_name}"
 
