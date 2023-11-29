@@ -3,7 +3,7 @@
 
 # PVE Template Provisioning Variables
 template_name: 2022STD-template
-pve_storage_id: local-
+pve_storage_id: local
 vm_cores: 2
 vm_sockets: 1
 vm_memory_mb: 4096 
