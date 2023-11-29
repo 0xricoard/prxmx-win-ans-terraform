@@ -7,31 +7,31 @@ variable "domain_name" {
 variable "dns_server" {
   type        = string
   description = "The DNS Server to use."
-  default     = "192.168.1.1"
+  default     = "1.1.1.1"
 }
 
 variable "resource_pool" {
   type        = string
-  default     = "zfspool"
+  default     = ""
   description = "A logical group of containers and VMs "
 }
 
 variable "template_name" {
   type        = string
-  default     = "2019DC-tpl"
+  default     = "2022"
   description = "The template to clone from. Refer to Create Template.sh for creating a template."
 }
 
 variable "memory" {
   type        = number
   description = "The RAM in MB."
-  default     = 2048
+  default     = 4096
 }
 
 variable "num_cores" {
   type        = number
   description = "Number of cores per socket"
-  default     = 2
+  default     = 1
 }
 
 variable "num_sockets" {
@@ -49,13 +49,13 @@ variable "vm_count" {
 variable "datastore" {
   type        = string
   description = "Storage pool where virtual machines will live."
-  default     = "local-zfs"
+  default     = "local"
 }
 
 variable "qemu_agent" {
   type        = number
   description = "Whether the qemu agent is running 1 = on, 0 = off"
-  default     = 0 
+  default     = 1 
 }
 
 variable "disk_format" {
@@ -67,7 +67,7 @@ variable "disk_format" {
 variable "disk_size" {
   type        = number
   description = "The main disk size in GB"
-  default     = 40
+  default     = 60
 }
 
 variable "ssh_public_key" {
@@ -79,7 +79,7 @@ variable "ssh_public_key" {
 variable "vm_name_prefix" {
   type        = string
   description = "The name of the virtual machine without count."
-  default     = "example-vm"
+  default     = "win2022stdterraform"
 }
 
 variable "network_bridge" {
@@ -91,6 +91,6 @@ variable "network_bridge" {
 variable "target_node" {
   type        = string
   description = "The node to deploy virtual machines to."
-  default     = "192.168.1.25"
+  default     = "localhost"
 }
 
