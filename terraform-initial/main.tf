@@ -1,14 +1,14 @@
 provider "proxmox" {
   pm_tls_insecure = true
-  pm_api_url = "https://192.168.1.25:8006/api2/json"
-  pm_password = "xxxxxx"
+  pm_api_url = "https://localhost:8006/api2/json"
+  pm_password = "Persadez123@@"
   pm_user = "root@pam"
   pm_otp = ""
 
 }
 
 resource "proxmox_vm_qemu" "virtual_machine" {
-  name  = "test123"
+  name  = "win2022terraform"
 #  count = var.vm_count
 #  name  = "${var.vm_name_prefix}${count.index}.${var.domain_name}"
 
@@ -25,7 +25,7 @@ resource "proxmox_vm_qemu" "virtual_machine" {
   # Activate QEMU agent for this VM
   agent =  var.qemu_agent
 
-  os_type  = "win10"
+  os_type  = "win11"
   cores    = var.num_cores
   sockets  = var.num_sockets
   vcpus    = "0"
